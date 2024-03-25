@@ -1,6 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import {MatTable} from '@angular/material/table';
-import {MatTableModule} from '@angular/material/table';
+
 
 export interface PeriodicElement {
   name: string;
