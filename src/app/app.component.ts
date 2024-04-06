@@ -1,6 +1,7 @@
-import {Component, ViewChild} from '@angular/core';
-import {MatTable} from '@angular/material/table';
-import {MatTableModule} from '@angular/material/table';
+import {Component} from '@angular/core';
+import { DialogComponent } from './entities/components/dialog/dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { IGym } from 'src/app/entities/intefaces/app.interface';
 
 export interface PeriodicElement {
   name: string;
@@ -16,6 +17,9 @@ export interface PeriodicElement {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-
+  constructor(public _dialog: MatDialog) {}
+  onClick() {
+    this._dialog.open(DialogComponent)
+  }
 }
 
