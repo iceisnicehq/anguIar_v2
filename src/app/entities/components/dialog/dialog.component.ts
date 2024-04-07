@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, Inject } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { IGym } from 'src/app/entities/intefaces/app.interface';
 import { DialogFormBuilderService } from 'src/app/entities/components/dialog/dialog.form-builder.service';
 
@@ -14,11 +15,18 @@ export class DialogComponent {
   minDate = new Date(this.currentYear - 1, 0, 1);
   maxDate = new Date();
   public gymForm: FormGroup;
-  constructor(private dialogFormBuilderService: DialogFormBuilderService) {
-    this.gymForm = this.dialogFormBuilderService.gymForm;
+  constructor(
+    private readonly _fb: DialogFormBuilderService,
+    private readonly _dialogRef: MatDialogRef<DialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: IGym
+  ) {
+    this.gymForm = this._fb.dialogFormBuilderService(data);
+    }
+  public onNoClick(): void {
+    this._dialogRef.close();
   }
-
   onFormSubmit() {
-    this.dialogFormBuilderService.onSubmit();
-  }
+    console.log(this.gymForm.value);
+    }
 }
+
