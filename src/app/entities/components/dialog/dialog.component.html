@@ -14,9 +14,13 @@
       </mat-form-field>
         <br />
       <mat-form-field appearance="outline">
-        <mat-label>Choose a trainer</mat-label>
-        <input matInput
-               typeformControlName="trainer">
+               <mat-label>Choose a trainer</mat-label>
+               <mat-select formControlName="trainer">
+                 <mat-option value="Bill">Bill</mat-option>
+                 <mat-option value="Joe">Joe</mat-option>
+                 <mat-option value="Mama">Mama</mat-option>
+                 <mat-option value="Ron">Ron</mat-option>
+               </mat-select>
       </mat-form-field>
         <br />
       <mat-form-field appearance="outline">
@@ -25,7 +29,7 @@
                    [min]="minDate"
                    [max]="maxDate"
                    [matDatepicker]="picker"
-                   typeformControlName="date">
+                   formControlName="date">
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
@@ -36,10 +40,10 @@
         <input matInput
                type="email"
                placeholder="Enter your email"
-               typeformControlName="email">
+               formControlName="email">
       </mat-form-field>
         <!-- <br /> -->
-        <mat-checkbox typeformControlName="sauna">
+        <mat-checkbox formControlName="sauna">
             Sauna?</mat-checkbox>
         <!-- <br /> -->
       <mat-form-field appearance="outline">
@@ -53,7 +57,9 @@
 
   <div mat-dialog-actions
       class="actions">
-      <button mat-raised-button>Close</button>
+      <button mat-raised-button type="button"
+              color="warn"
+              [mat-dialog-close]="false">Cancel</button>
       <button mat-raised-button
               color="primary"
               type="submit">Save</button>

@@ -20,7 +20,7 @@ export class DialogFormBuilderService {
       trainer: new FormControl('', [Validators.required]),
       date: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required]),
-      sauna: new FormControl('', [Validators.required]),
+      sauna: new FormControl(false, [Validators.required]),
       phone: new FormControl('', [Validators.required]),
     });
   }

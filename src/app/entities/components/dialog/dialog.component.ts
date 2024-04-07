@@ -22,11 +22,9 @@ export class DialogComponent {
   ) {
     this.gymForm = this._fb.dialogFormBuilderService(data);
     }
-  public onNoClick(): void {
-    this._dialogRef.close();
-  }
-  onFormSubmit() {
+  public onFormSubmit() {
     console.log(this.gymForm.value);
+    this._dialogRef.close();
     }
 }
 
