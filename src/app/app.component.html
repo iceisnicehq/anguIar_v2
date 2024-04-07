@@ -1,8 +1,26 @@
-<mat-toolbar color="primary">
-  <h1 class="lab-header">
-    Лабораторная работа 2
-  </h1>
-  <button mat-raised-button (click)="onClick()">
-    Click Clack I'M ROBOT
-  </button>
+<mat-toolbar color="primary"
+             class="toolbar">
+  <h1 class="lab-header">Лабораторная работа 2</h1>
+  <button mat-raised-button (click)="onClick()">Click Clack I'M ROBOT</button>
+
+
 </mat-toolbar>
+
+<table class="gridtable">
+  <tr>
+    <th>Name</th>
+    <th>Trainer</th>
+    <th>Date</th>
+    <th>Email</th>
+    <th>Sauna</th>
+    <th>Phone</th>
+  </tr>
+  <tr *ngFor="let item of tableData">
+    <td>{{ item.name }}</td>
+    <td>{{ item.trainer }}</td>
+    <td>{{ item.email }}</td>
+    <td>{{ item.date }}</td>
+    <td>{{ item.sauna }}</td>
+    <td>{{ item.phone }}</td>
+  </tr>
+</table>
