@@ -14,14 +14,14 @@ import { IGym } from 'src/app/entities/intefaces/app.interface';
 export class DialogFormBuilderService {
   constructor(private readonly _fb: FormBuilder) {}
 
-  public dialogFormBuilderService(data?: IGym): FormGroup {
+  public dialogFormBuilderService(data: IGym): FormGroup {
     return this._fb.group({
       name: new FormControl('', [Validators.required]),
       trainer: new FormControl('', [Validators.required]),
       date: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required]),
       sauna: new FormControl(false, [Validators.required]),
-      phone: new FormControl('', [Validators.required]),
+      pass: new FormControl('', [Validators.required]),
     });
   }
 }

@@ -10,11 +10,15 @@ import { DialogFormBuilderService } from 'src/app/entities/components/dialog/dia
   styleUrls: ['./dialog.component.scss'],
 })
 export class DialogComponent {
-  public title: string = 'Booking a session';
+  public title: string = 'Добавление a sesion';
   currentYear = new Date().getFullYear();
   minDate = new Date(this.currentYear - 1, 0, 1);
   maxDate = new Date();
   public gymForm: FormGroup;
+  
+  mask = [/\/d/, /\/d/, /\/d/, /\/d/\/d/,d/,, /\/d/, /\/d/];
+
+
 
   constructor(
     private readonly _fb: DialogFormBuilderService,
@@ -24,7 +28,7 @@ export class DialogComponent {
     this.gymForm = this._fb.dialogFormBuilderService(data);
   }
   public onFormSubmit() {
-    console.log(this.gymForm.value);
+    // console.log(this.gymForm.value);
     this._dialogRef.close(this.gymForm.value);
   }
 }

@@ -13,8 +13,10 @@
         <mat-label>Your Name</mat-label>
         <input matInput
                type="text"
-               placeholder="Enter your full name"
-               formControlName="name">
+               placeholder="Enter your first name"
+               formControlName="name"
+               pattern="^[a-zA-Zа-яА-Я]+$">
+          <mat-hint>Only alphabetical characters.</mat-hint>
       </mat-form-field>
         <br />
       <mat-form-field appearance="outline">
@@ -51,20 +53,21 @@
             Sauna?</mat-checkbox>
         <!-- <br /> -->
       <mat-form-field appearance="outline">
-        <mat-label>Phone</mat-label>
+        <mat-label>Pass  number</mat-label>
         <input matInput
-                type="tel"
-                placeholder="Enter your phone number"
-                formControlName="phone">
+               type="text"
+               placeholder="XXXXXX"
+               formControlName="pass">
       </mat-form-field>
   </div>
 
   <div mat-dialog-actions
-      class="actions">
+       class="actions">
       <button mat-raised-button type="button"
               color="warn"
               [mat-dialog-close]="false">Cancel</button>
       <button mat-raised-button
+              [disabled]="!gymForm.valid"
               color="primary"
               type="submit">Save</button>
   </div>

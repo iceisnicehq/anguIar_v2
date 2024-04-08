@@ -4,5 +4,5 @@ export interface IGym {
     date: Date,
     email: string,
     sauna: boolean,
-    phone: string,
+    pass: string,
   }
