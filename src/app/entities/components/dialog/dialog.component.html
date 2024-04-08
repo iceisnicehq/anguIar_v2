@@ -1,6 +1,10 @@
 <div mat-dialog-title>
     <h1> {{ title }}</h1>
 </div>
+<div class="close"
+     [mat-dialog-close]="false">
+  x
+</div>
 <form [formGroup]="gymForm"
       (ngSubmit)="onFormSubmit()">
     <div mat-dialog-content
