@@ -6,14 +6,22 @@ import {
   Validators,
 } from '@angular/forms';
 import { IGym } from 'src/app/entities/intefaces/app.interface';
-
+/**
+ * @service {DialogFormBuilderService}
+ * @description для создания реактивных форм
+ */
 @Injectable({
   providedIn: 'root',
 })
 
 export class DialogFormBuilderService {
   constructor(private readonly _fb: FormBuilder) {}
-
+  /**
+   * @method DialogFormBuilderService
+   * @description создание форм группы
+   * @param {ICinema} [data] - начальные данные из главного компонента
+   * @returns {FormGroup} возвращает форм группу
+   */
   public dialogFormBuilderService(data: IGym): FormGroup {
     return this._fb.group({
       name: new FormControl('', [Validators.required]),

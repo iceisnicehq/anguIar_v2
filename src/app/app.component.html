@@ -1,12 +1,11 @@
-<mat-toolbar color="primary"
-             class="toolbar">
-  <h1 class="lab-header">Лабораторная работа 2</h1>
+<mat-toolbar color="primary">
+  <h1>
+    {{ title }}
+  </h1>
   <button mat-raised-button (click)="onClick()">Add Personal Record</button>
-
-
 </mat-toolbar>
 
-<table class="gridtable">
+<table>
   <tr>
     <th>Name</th>
     <th>Lift</th>
@@ -24,7 +23,7 @@
     <td>{{ item.natural ? 'Yes' : 'No' }}</td>
     <td>{{ item.weight }}</td>
     <td>
-      <button (click)="onDelete(item.name)"
+      <button (click)="onDelete(item)"
                mat-fab color="warn">
         <mat-icon>delete</mat-icon>
       </button>

@@ -11,11 +11,16 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule,
+         MAT_DATE_LOCALE
+} from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
-import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
-import { MAT_DATE_LOCALE } from '@angular/material/core';
+import {
+  NgxMaskDirective,
+  NgxMaskPipe,
+  provideNgxMask
+} from 'ngx-mask';
 import { DatePipe } from '@angular/common';
 
 @NgModule({
