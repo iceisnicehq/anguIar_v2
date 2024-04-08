@@ -10,7 +10,7 @@ import { DialogFormBuilderService } from 'src/app/entities/components/dialog/dia
   styleUrls: ['./dialog.component.scss'],
 })
 export class DialogComponent {
-  public title: string = 'Добавление a sesion';
+  public title: string = 'Добавление PR';
   currentYear = new Date().getFullYear();
   minDate = new Date(this.currentYear - 1, 0, 1);
   maxDate = new Date();
