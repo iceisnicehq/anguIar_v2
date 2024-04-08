@@ -3,9 +3,6 @@ import { DialogComponent } from './entities/components/dialog/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { IGym } from 'src/app/entities/intefaces/app.interface';
 
-import { FormControl } from '@angular/forms';
-import { createMask } from '@ngneat/input-mask';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,8 +10,7 @@ import { createMask } from '@ngneat/input-mask';
 })
 export class AppComponent {
   constructor(public _dialog: MatDialog) {}
-  inputMask = createMask('999999');
-  maskFC = new FormControl('');
+
 
   onClick() {
     const dialogRef = this._dialog.open(DialogComponent);
@@ -29,11 +25,11 @@ export class AppComponent {
   public tableData: IGym[] = [
     {
       name: 'John',
-      trainer: 'G',
+      lift: 'G',
       date: new Date(),
-      email: 'denver@ads',
-      sauna: true,
-      pass: '142',
+      eqt: 'denver@ads',
+      natural: true,
+      weight: '142',
     },
   ];
   onDelete(name: string) {

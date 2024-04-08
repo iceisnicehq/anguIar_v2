@@ -1,8 +1,8 @@
 export interface IGym {
     name: string,
-    trainer: string,
+    lift: string,
     date: Date,
-    email: string,
-    sauna: boolean,
-    pass: string,
+    eqt: string,
+    natural: boolean,
+    weight: string,
   }

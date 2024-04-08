@@ -17,11 +17,11 @@ export class DialogFormBuilderService {
   public dialogFormBuilderService(data: IGym): FormGroup {
     return this._fb.group({
       name: new FormControl('', [Validators.required]),
-      trainer: new FormControl('', [Validators.required]),
+      lift: new FormControl('', [Validators.required]),
       date: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required]),
-      sauna: new FormControl(false, [Validators.required]),
-      pass: new FormControl('', [Validators.required]),
+      eqt: new FormControl('', [Validators.required]),
+      natural: new FormControl(false, [Validators.required]),
+      weight: new FormControl('', [Validators.required]),
     });
   }
 }

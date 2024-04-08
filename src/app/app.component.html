@@ -9,20 +9,20 @@
 <table class="gridtable">
   <tr>
     <th>Name</th>
-    <th>Trainer</th>
-    <th>Email</th>
+    <th>Lift</th>
     <th>Date</th>
-    <th>Sauna</th>
-    <th>Phone</th>
+    <th>Equipment</th>
+    <th>Natural</th>
+    <th>Weight</th>
     <th>Delete</th>
   </tr>
   <tr *ngFor="let item of tableData">
     <td>{{ item.name }}</td>
-    <td>{{ item.trainer }}</td>
-    <td>{{ item.email }}</td>
-    <td>{{ item.date }}</td>
-    <td>{{ item.sauna ? 'Yes' : 'No' }}</td>
-    <td>{{ item.pass }}</td>
+    <td>{{ item.lift }}</td>
+    <td>{{ item.date | date: 'dd.mm.yyyy' }}</td>
+    <td>{{ item.eqt }}</td>
+    <td>{{ item.natural ? 'Yes' : 'No' }}</td>
+    <td>{{ item.weight }}</td>
     <td>
       <button (click)="onDelete(item.name)"
                mat-fab color="warn">

@@ -15,9 +15,6 @@ export class DialogComponent {
   minDate = new Date(this.currentYear - 1, 0, 1);
   maxDate = new Date();
   public gymForm: FormGroup;
-  
-  mask = [/\/d/, /\/d/, /\/d/, /\/d/\/d/,d/,, /\/d/, /\/d/];
-
 
 
   constructor(

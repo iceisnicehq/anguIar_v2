@@ -14,8 +14,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
-
-import { InputMaskModule } from '@ngneat/input-mask';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent, DialogComponent],
@@ -34,9 +35,14 @@ import { InputMaskModule } from '@ngneat/input-mask';
     MatCheckboxModule,
     ReactiveFormsModule,
     MatSelectModule,
-    InputMaskModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
+    DatePipe,
   ],
-  providers: [],
+  providers: [
+    provideNgxMask(),
+    { provide: MAT_DATE_LOCALE, useValue: 'ru-RU' },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
