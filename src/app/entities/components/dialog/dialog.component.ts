@@ -59,7 +59,10 @@ export class DialogComponent {
     @Inject(MAT_DIALOG_DATA) public data: IGym
   ) {
     this.gymForm = this._fb.createDialogForm(data)
-    this.gymForm.patchValue(data);
+    if (data) {
+      this.title = 'Редактирование PR';
+      this.gymForm.patchValue(data);
+    }
   }
     /**
    * Отвечает за сохранение введенных данных
@@ -71,5 +74,16 @@ export class DialogComponent {
    */
   public onFormSubmit(): void {
     this._dialogRef.close(this.gymForm.value);
+  }
+    /**
+   * Закрытие диалога
+   *
+   * @method onClose
+   * @return {void}
+   * @description отвечает за закрытие дилога при нажатии на крестик или кнопку отмены
+   * @public
+   */
+  public onClose(): void {
+    this._dialogRef.close(null);
   }
 }

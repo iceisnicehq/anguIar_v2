@@ -23,15 +23,14 @@ export class createDialogForm {
    * @returns {FormGroup} возвращает форм группу
    */
   public createDialogForm(data: IGym): FormGroup {
-    const form = this._fb.group({
-      name: new FormControl('', [Validators.required]),
-      lift: new FormControl('', [Validators.required]),
-      date: new FormControl(new Date(), [Validators.required]),
-      eqt: new FormControl('', [Validators.required]),
-      natural: new FormControl(false, [Validators.required]),
-      weight: new FormControl('', [Validators.required]),
-    });
-    return form;
+      return this._fb.group({
+        name: new FormControl('', [Validators.required]),
+        lift: new FormControl('', [Validators.required]),
+        date: new FormControl('', [Validators.required]),
+        eqt: new FormControl('', [Validators.required]),
+        natural: new FormControl('', [Validators.required]),
+        weight: new FormControl('', [Validators.required]),
+      });
   }
 }
 
