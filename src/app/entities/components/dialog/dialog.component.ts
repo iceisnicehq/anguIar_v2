@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { IGym } from 'src/app/entities/intefaces/app.interface';
-import { DialogFormBuilderService } from 'src/app/entities/components/dialog/dialog.form-builder.service';
+import { createDialogForm } from 'src/app/entities/components/dialog/dialog.create-form';
 
 @Component({
   selector: 'app-dialog',
@@ -49,16 +49,17 @@ export class DialogComponent {
    * Конструктор для диалогового окна
    *
    * @constructor
-   * @param {DialogFormBuilderService} _fb
+   * @param {createDialogForm} _fb
    * @param {MatDialogRef<DialogComponent>} _dialogRef
    * @param {ICinema} data
    */
   constructor(
-    private readonly _fb: DialogFormBuilderService,
+    private readonly _fb: createDialogForm,
     private readonly _dialogRef: MatDialogRef<DialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: IGym
   ) {
-    this.gymForm = this._fb.dialogFormBuilderService(data);
+    this.gymForm = this._fb.createDialogForm(data)
+    this.gymForm.patchValue(data);
   }
     /**
    * Отвечает за сохранение введенных данных

@@ -25,6 +25,13 @@ export class AppComponent {
    */
   public tableData: IGym[] = [];
   /**
+   * объект типа IGym для изменения
+   *
+   * @public
+   * @type {string}
+   */
+  public currItem?: IGym;
+  /**
    * Объявление конструктора
    *
    * @param {MatDialog} _dialog - сервис диалога
@@ -50,9 +57,7 @@ export class AppComponent {
       .afterClosed()
       .pipe(takeUntilDestroyed(this._destroyRef))
       .subscribe((data: IGym) => {
-      if (data) {
-        this.tableData.push(data);
-      }
+      this.tableData.push(data);
     });
   }
    /**
@@ -65,9 +70,34 @@ export class AppComponent {
    * затем убираем эту строку через метод splice
    * @public
    * @type { IGym} - для item
+   * @return {void}
    */
   public onDelete(delItem: IGym): void {
-    const index = this.tableData.findIndex((item) => item === delItem);
+    const index: number = this.tableData.findIndex((item) => item === delItem);
     this.tableData.splice(index, 1);
+  }
+   /**
+   * Измененеие ряда из таблицы
+   *
+   * @method
+   * @param { IGym } currItem - объект интерфейса delItem
+   * @description создается константа индекс, которая принимает значение
+   * индекса изменяемого объекта(ряда) с помощью строгого сравнения,
+   * затем перезаписываем эту строку
+   * @public
+   * @type { IGym} - для currItem
+   * @return {void}
+   */
+  public onChange(currItem: IGym): void {
+    const dialogRef = this._dialog.open(DialogComponent, {
+      data: currItem,
+    });
+    dialogRef
+      .afterClosed()
+      .pipe(takeUntilDestroyed(this._destroyRef))
+      .subscribe((data: IGym) => {
+        const index: number = this.tableData.findIndex((item) => item === currItem);
+        this.tableData[index] = data;
+    });
   }
 }
