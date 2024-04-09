@@ -94,7 +94,7 @@ export class AppComponent {
     const dialogRef = this._dialog.open(DialogComponent, {
       data: currItem,
     });
-      dialogRef
+    dialogRef
       .afterClosed()
       .pipe(takeUntilDestroyed(this._destroyRef))
       .subscribe((data: IGym) => {
