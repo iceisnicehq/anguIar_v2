@@ -94,12 +94,14 @@ export class AppComponent {
     const dialogRef = this._dialog.open(DialogComponent, {
       data: currItem,
     });
-    dialogRef
+      dialogRef
       .afterClosed()
       .pipe(takeUntilDestroyed(this._destroyRef))
       .subscribe((data: IGym) => {
-        const index: number = this.tableData.findIndex((item) => item === currItem);
-        this.tableData[index] = data;
+        if (data) {
+          const index: number = this.tableData.findIndex((item) => item === currItem);
+          this.tableData[index] = data;
+        }
     });
   }
 }

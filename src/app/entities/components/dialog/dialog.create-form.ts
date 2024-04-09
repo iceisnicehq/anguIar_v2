@@ -28,7 +28,7 @@ export class createDialogForm {
         lift: new FormControl('', [Validators.required]),
         date: new FormControl('', [Validators.required]),
         eqt: new FormControl('', [Validators.required]),
-        natural: new FormControl('', [Validators.required]),
+        natural: new FormControl(false, [Validators.required]),
         weight: new FormControl('', [Validators.required]),
       });
   }
