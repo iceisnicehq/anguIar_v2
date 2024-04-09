@@ -14,6 +14,7 @@
     <th>Natural</th>
     <th>Weight</th>
     <th>Delete</th>
+    <th>Edit</th>
   </tr>
   <tr *ngFor="let item of tableData">
     <td>{{ item.name }}</td>
@@ -26,6 +27,12 @@
       <button (click)="onDelete(item)"
                mat-fab color="warn">
         <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+    <td>
+      <button (click)="onChange(item)"
+               mat-fab color="accent">
+        <mat-icon>favorite</mat-icon>
       </button>
     </td>
   </tr>
