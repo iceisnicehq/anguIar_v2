@@ -1,0 +1,80 @@
+<div mat-dialog-title>
+    <span>{{ title }}</span>
+</div>
+<div [mat-dialog-close]="false"
+     class="close">
+  x
+</div>
+<form [formGroup]="gymForm"
+      (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content
+         class="content">
+    <mat-form-field appearance="outline">
+        <mat-label>Your Name</mat-label>
+        <input matInput
+               formControlName="name"
+               pattern="^[a-zA-Zа-яА-Я]+$"
+               placeholder="Enter your first name"
+               type="text"/>
+          <mat-hint>Only alphabetical characters</mat-hint>
+      </mat-form-field>
+        <br />
+      <mat-form-field appearance="outline">
+               <mat-label>What lift</mat-label>
+               <mat-select formControlName="lift">
+                 <mat-option value="Bench">Becnh</mat-option>
+                 <mat-option value="Squat">Squat</mat-option>
+                 <mat-option value="Deadlift">Deadlift</mat-option>
+                 <mat-option value="Joe Mama">Joe Mama</mat-option>
+                 <mat-option value="Ligma">Ligma</mat-option>
+               </mat-select>
+      </mat-form-field>
+        <br />
+      <mat-form-field appearance="outline">
+            <mat-label>Choose a date</mat-label>
+            <input [min]="minDate"
+                   [max]="maxDate"
+                   [matDatepicker]="picker"
+                   matInput
+                   formControlName="date">
+            <mat-datepicker-toggle [for]="picker"
+                                   matIconSuffix
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker
+            ></mat-datepicker>
+      </mat-form-field>
+        <br />
+      <mat-form-field appearance="outline">
+        <mat-label>Equipment</mat-label>
+        <input matInput
+               formControlName="eqt"
+               placeholder="What equipment"
+               type="text"/>
+      </mat-form-field>
+        <mat-checkbox formControlName="natural"
+                      class="checkbox">
+            Natural?
+        </mat-checkbox>
+      <mat-form-field appearance="outline">
+        <mat-label>Weight</mat-label>
+        <input [dropSpecialCharacters]="false"
+               matInput
+               formControlName="weight"
+               mask="009"
+               placeholder="XXX lbs"
+               type="text"
+               suffix=" lbs"/>
+      </mat-form-field>
+  </div>
+  <div mat-dialog-actions
+       class="actions">
+      <button [mat-dialog-close]="false"
+              mat-raised-button
+              type="button"
+              color="warn">Cancel</button>
+      <button [disabled]="!gymForm.valid"
+              mat-raised-button
+              type="submit"
+              color="primary">Save</button>
+  </div>
+</form>

@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">
+  <h1>
+    {{ title }}
+  </h1>
+  <button mat-raised-button (click)="onClick()">Add Personal Record</button>
+</mat-toolbar>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Lift</th>
+    <th>Date</th>
+    <th>Equipment</th>
+    <th>Natural</th>
+    <th>Weight</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let item of tableData">
+    <td>{{ item.name }}</td>
+    <td>{{ item.lift }}</td>
+    <td>{{ item.date | date: 'dd.MM.yyyy' }}</td>
+    <td>{{ item.eqt }}</td>
+    <td>{{ item.natural ? 'Yes' : 'No' }}</td>
+    <td>{{ item.weight }}</td>
+    <td>
+      <button (click)="onDelete(item)"
+               mat-fab color="warn">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </tr>
+</table>
