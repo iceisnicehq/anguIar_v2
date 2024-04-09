@@ -57,7 +57,9 @@ export class AppComponent {
       .afterClosed()
       .pipe(takeUntilDestroyed(this._destroyRef))
       .subscribe((data: IGym) => {
-      this.tableData.push(data);
+        if (data) {
+          this.tableData.push(data);
+        }
     });
   }
    /**
