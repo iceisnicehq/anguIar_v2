@@ -83,7 +83,7 @@ export class DialogComponent {
    * @description отвечает за закрытие дилога при нажатии на крестик или кнопку отмены
    * @public
    */
-  public onClose(): void {
-    this._dialogRef.close(null);
-  }
+    public onClose(): void {
+      this._dialogRef.close();
+    }
 }
