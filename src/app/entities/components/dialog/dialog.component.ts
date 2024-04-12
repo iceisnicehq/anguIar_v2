@@ -51,7 +51,7 @@ export class DialogComponent {
    * @constructor
    * @param {createDialogForm} _fb
    * @param {MatDialogRef<DialogComponent>} _dialogRef
-   * @param {ICinema} data
+   * @param {IGym} data
    */
   constructor(
     private readonly _fb: createDialogForm,
