@@ -2,7 +2,7 @@
     <span>{{ title }}</span>
 </div>
 <div (click)="onClose()"
-     class="close">
+      class="close">
   x
 </div>
 <form [formGroup]="gymForm"
@@ -40,8 +40,7 @@
             <mat-datepicker-toggle [for]="picker"
                                    matIconSuffix
             ></mat-datepicker-toggle>
-            <mat-datepicker #picker
-            ></mat-datepicker>
+            <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
         <br />
       <mat-form-field appearance="outline">
@@ -53,7 +52,7 @@
       </mat-form-field>
         <mat-checkbox formControlName="natural"
                       class="checkbox">
-            Natural?
+          Natural?
         </mat-checkbox>
       <mat-form-field appearance="outline">
         <mat-label>Weight</mat-label>
@@ -68,13 +67,17 @@
   </div>
   <div mat-dialog-actions
        class="actions">
-      <button (click)="onClose()"
-              mat-raised-button
+      <button  mat-raised-button
+              (click)="onClose()"
               type="button"
-              color="warn">Cancel</button>
+              color="warn">
+        Cancel
+      </button>
       <button [disabled]="!gymForm.valid"
               mat-raised-button
               type="submit"
-              color="primary">Save</button>
+              color="primary">
+        Save
+      </button>
   </div>
 </form>
