@@ -19,7 +19,7 @@ export class createDialogForm {
   /**
    * @method createDialogForm
    * @description создание форм группы
-   * @param {IGym} [data] - начальные данные из главного компонента
+   * @param {IGym} data - начальные данные из главного компонента
    * @returns {FormGroup} возвращает форм группу
    */
   public createDialogForm(data: IGym): FormGroup {
